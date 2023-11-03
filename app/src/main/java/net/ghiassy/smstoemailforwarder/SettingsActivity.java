@@ -223,13 +223,11 @@ public class SettingsActivity extends AppCompatActivity implements MessageListen
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        //super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == 1000)
-        {
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
-            {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1000) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
-            }else{
+            } else {
                 Toast.makeText(this, "NO Permission!", Toast.LENGTH_SHORT).show();
             }
         }
@@ -274,9 +272,9 @@ public class SettingsActivity extends AppCompatActivity implements MessageListen
         }
 
         ads1 = findViewById(R.id.adView);
-        MobileAds.initialize(this, "ca-app-pub-8053134103811321/8990930675");
-        AdRequest adRequest = new AdRequest.Builder().build();
-        ads1.loadAd(adRequest);
+//        MobileAds.initialize(this, "ca-app-pub-8053134103811321/8990930675");
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        ads1.loadAd(adRequest);
 
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
